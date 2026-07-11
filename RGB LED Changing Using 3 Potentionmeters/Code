@@ -1,0 +1,38 @@
+const int RED_POT{7};
+const int GREEN_POT{15};
+const int BLUE_POT{16};
+
+const int RED{4};
+const int GREEN{5};
+const int BLUE{6};
+
+void setup()
+{
+ 
+ pinMode(RED_POT, INPUT);
+ pinMode(GREEN_POT, INPUT);
+ pinMode(BLUE_POT, INPUT);
+
+ pinMode(RED, OUTPUT);
+ pinMode(GREEN, OUTPUT);
+ pinMode(BLUE, OUTPUT);
+
+}
+
+void loop() 
+{
+ int RpotValue{analogRead(RED_POT)};
+ int RedVal{map(RpotValue,0,4095,255,0)};
+
+ int GpotValue{analogRead(GREEN_POT)};
+ int GreenVal{map(GpotValue,0,4095,255,0)};
+
+ int BpotValue{analogRead(BLUE_POT)};
+ int BlueVal{map(BpotValue,0,4095,255,0)};
+
+ analogWrite(RED, RedVal);
+ analogWrite(GREEN,GreenVal);
+ analogWrite(BLUE,BlueVal);
+ 
+  delay(30);
+}
