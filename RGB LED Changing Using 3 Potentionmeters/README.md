@@ -5,7 +5,10 @@ and than based on the potentiometer input, you can change the RGB values of the 
 and create huge amount of colours.
 
 TIME: 20 min + 10 min debugging.
+
 DIFFICULTY: 2/10.
+
 LEARNING VALUE: 5/10.
+
 
 DATE: 11.7.2026
