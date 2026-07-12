@@ -1,0 +1,34 @@
+#include "DHTesp.h"
+
+const int dht11 {4};
+
+DHTesp dht;
+
+void setup()
+{
+  Serial.begin(115200);
+  dht.setup(dht11,DHTesp::DHT11);
+}
+
+void loop()
+{
+  delay(2000);
+
+  float Humidity{dht.getHumidity()};
+
+  float Temperature{dht.getTemperature()};
+  
+  if(dht.getStatus() == DHTesp::ERROR_NONE)
+  {
+    Serial.print("Humidity: ");
+    Serial.print(Humidity);
+    Serial.print("%\t");
+    Serial.print("Temperature: ");
+    Serial.print(Temperature);
+    Serial.println(" *C");
+  }
+  else
+  {
+    Serial.println(dht.getStatusString());
+  }
+}
