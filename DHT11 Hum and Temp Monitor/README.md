@@ -8,4 +8,6 @@ TIME: 25 min + 15 min debugging.
 
 DIFFICULTY: 5/10.
 
+LEARNING VALUE: 7/10.
+
 DATE: 12.7.2026.
