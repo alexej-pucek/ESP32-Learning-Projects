@@ -1,0 +1,31 @@
+const int motionSensor{12};
+const int activeBuzzer{8};
+const int LED{5};
+
+
+void setup() 
+{
+  Serial.begin(115200);
+  pinMode(motionSensor, INPUT);
+  pinMode(activeBuzzer, OUTPUT);
+  pinMode(LED, OUTPUT);
+
+}
+
+void loop() 
+{
+  int motion{digitalRead(motionSensor)};
+  if(motion == HIGH)
+  {
+    Serial.println("There he is!");
+    digitalWrite(activeBuzzer, HIGH);
+    digitalWrite(LED, HIGH);
+  }
+  else
+  {
+    Serial.println("Nobody here");
+    digitalWrite(activeBuzzer, LOW);
+    digitalWrite(LED, LOW);
+  }
+  delay(500);
+}
