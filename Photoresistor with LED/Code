@@ -1,0 +1,29 @@
+const int Photoresistor{3};
+const int LED{18};
+
+
+void setup() 
+{
+  Serial.begin(115200);
+  pinMode(Photoresistor, INPUT);
+  pinMode(LED, OUTPUT);
+
+}
+
+void loop() 
+{
+  int Light{analogRead(Photoresistor)};
+  Serial.println(Light);
+  
+
+  if(Light > 2000)
+  {
+    digitalWrite(LED, HIGH);
+  }
+  else
+  {
+    digitalWrite(LED, LOW);
+  }
+  delay(500);
+
+}
