@@ -1,0 +1,27 @@
+#include <ESP32Servo.h>
+Servo myservo;
+const int potentiometer{9};
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(potentiometer, INPUT);
+  myservo.attach(18);
+
+}
+
+void loop()
+{
+  int angle{ analogRead(potentiometer) };
+
+  angle = map(angle,0,4095,0,180);
+
+  Serial.print("Angle on servo is: ");
+  Serial.println(angle);
+
+  myservo.write(angle);
+
+  delay(20);
+
+
+
+}
